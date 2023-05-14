@@ -2,7 +2,7 @@
     export { flip } from "svelte/animate";
 
     export let images;
-    export let imageWhidth = 1200;
+    export let imageWhidth = 980;
     export let imageSpacing = 20;
     export let speed = 1000;
 
@@ -102,7 +102,7 @@
         flex-wrap: nowrap;
     }
 
-    button{
+    button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -113,10 +113,10 @@
     button:focus {
         outline: 1px solid white;
     }
-    #left{
+    #left {
         left: 10px;
     }
-    #right{
+    #right {
         right: 10px;
     }
 </style>

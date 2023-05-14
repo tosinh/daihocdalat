@@ -22,7 +22,7 @@
 </svelte:head>
 
 <section class="flex flex-col items-center">
-    <Carousel {images} imageWhidth={1200} imageSpacing={15} />
+    <Carousel {images} imageWhidth={980} imageSpacing={15} />
 
     <slot />
 </section>
