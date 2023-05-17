@@ -1,5 +1,9 @@
 <script>
     import Carousel from "../components/carousel.svelte";
+    import Tuyensinh from "../components/tuyensinh.svelte";
+    import Main from "../components/main.svelte";
+    import Partners from "../components/partners.svelte";
+    import Studentlife from "../components/studentlife.svelte";
 
     const images = [
         {
@@ -23,6 +27,20 @@
 
 <section class="flex flex-col items-center">
     <Carousel {images} imageWhidth={980} imageSpacing={15} />
+</section>
 
-    <slot />
+<section class="flex flex-col items-center">
+    <Tuyensinh />
+</section>
+
+<section class="flex flex-col items-center">
+    <Main />
+</section>
+
+<section class="flex flex-col items-center">
+    <Partners />
+</section>
+
+<section class="flex flex-col items-center">
+    <Studentlife />
 </section>
