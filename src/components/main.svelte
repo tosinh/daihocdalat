@@ -1,4 +1,6 @@
 <script>
+    import { each } from "svelte/internal";
+
     const newsItems = [
         {
             id: "anh1",
@@ -186,12 +188,12 @@
     ];
 </script>
 
-<div class="main">
-    <div class="news">
-        <div><span class="span-h">Tin tức</span></div>
-        <div class="news-items">
+<div class="main grid grid-cols-4 gap-4">
+    <div class="news col-span-3">
+        <h3><span class="span-h">Tin tức</span></h3>
+        <div class="news-list grid grid-cols-3 grid-rows-5 gap-4">
             {#each newsItems as news}
-                <div class="news-item">
+                <div class="news-item col-span-1">
                     <img class="news-img" src={news.img} alt={news.id} />
                     <div>
                         <a class="news-a" href="#">{news.title}</a>
@@ -205,17 +207,45 @@
             {/each}
         </div>
     </div>
-    <div class="hot-news">
-        <div><span class="span-h">Tin nổi bật</span></div>
-        <div class="hotnews-items" />
-    </div>
-    <div class="notification">
-        <div><span class="span-h">Thông báo</span></div>
-        <div class="notification-items" />
-    </div>
-    <div class="introduce">
-        <div><span class="span-h">Thông báo</span></div>
-        <div class="introduce-items" />
+    <div class="col-span-1 grid grid-cols-1">
+        <div class="hot-news">
+            <h3><span class="span-h">Tin nổi bật</span></h3>
+            <div class="hotnews-list">
+                {#each hotnewItems as item}
+                    <div class="hotnews-item">
+                        <div class="hotnews-index">{item.id}</div>
+                        <div class="hotnews-content">
+                            <div class="meta">
+                                <div class="hotnews-date">{item.date}</div>
+                                <div class="hotnews-view">{item.view}</div>
+                            </div>
+                            <div class="hotnews-lable">{item.label}</div>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+        </div>
+        <div class="notification">
+            <h3><span class="span-h">Thông báo</span></h3>
+            <div class="notification-list">
+                {#each notificationItems as item}
+                    <div class="notification-item">
+                        <div class="notification-index">{item.id}</div>
+                        <div class="notification-content">
+                            <div class="meta">
+                                <div class="notification-date">{item.date}</div>
+                                <div class="notification-view">{item.view}</div>
+                            </div>
+                            <div class="notification-lable">{item.label}</div>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+        </div>
+        <div class="introduce col-span-1">
+            <div><span class="span-h">Giới thiệu</span></div>
+            <div class="introduce-items" />
+        </div>
     </div>
 </div>
 
@@ -229,12 +259,21 @@
         font-weight: 700;
         line-height: 42px;
     }
-    .news {
-        display: flex;
+    .main {
+        width: 1200px;
+        max-width: 100%;
+        margin: 0 auto;
     }
-    .news-items {
-        width: 220px;
+    .news-item {
+        margin: 10px;
+        width: 248px;
         height: 348px;
-        display: flex;
+        overflow: hidden;
+    }
+    .hotnews-item {
+        width: 362px;
+        height: 98px;
+    }
+    .notification {
     }
 </style>

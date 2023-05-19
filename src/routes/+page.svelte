@@ -33,7 +33,7 @@
     <Tuyensinh />
 </section>
 
-<section class="flex flex-col items-center">
+<section>
     <Main />
 </section>
 
