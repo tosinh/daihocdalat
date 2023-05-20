@@ -28,7 +28,7 @@
 </script>
 
 <div class="carousel-container">
-    <div class="carousel-imges">
+    <div class="carousel-imges" autoplay="2000">
         {#each images as image (image.id)}
             <img
                 src={image.path}

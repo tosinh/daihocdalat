@@ -186,6 +186,12 @@
             label: "Kế hoạch tổ chức tuyên truyền, vận động, sưu tầm, hiến tặng những hiện vật, tư liệu liên quan đến chặng đường 65 năm hình thành, đổi mới và phát triển của Trường Đại học Đà Lạt",
         },
     ];
+    const meidaItems = [
+        {
+            id: "media1",
+            pawth: "",
+        },
+    ];
 </script>
 
 <div class="main grid grid-cols-4 gap-4">
@@ -195,7 +201,7 @@
             {#each newsItems as news}
                 <div class="news-item col-span-1">
                     <img class="news-img" src={news.img} alt={news.id} />
-                    <div>
+                    <div class="news-container">
                         <a class="news-a" href="#">{news.title}</a>
                         <div class="news-time">
                             <span class="news-span">{news.date}</span>
@@ -215,7 +221,7 @@
                     <div class="hotnews-item">
                         <div class="hotnews-index">{item.id}</div>
                         <div class="hotnews-content">
-                            <div class="meta">
+                            <div class="hotnews-meta">
                                 <div class="hotnews-date">{item.date}</div>
                                 <div class="hotnews-view">{item.view}</div>
                             </div>
@@ -232,7 +238,7 @@
                     <div class="notification-item">
                         <div class="notification-index">{item.id}</div>
                         <div class="notification-content">
-                            <div class="meta">
+                            <div class="notification-meta">
                                 <div class="notification-date">{item.date}</div>
                                 <div class="notification-view">{item.view}</div>
                             </div>
@@ -258,6 +264,7 @@
         font-size: 24px;
         font-weight: 700;
         line-height: 42px;
+        margin: 20px 0;
     }
     .main {
         width: 1200px;
@@ -269,11 +276,126 @@
         width: 248px;
         height: 348px;
         overflow: hidden;
+        margin: 0 auto;
+        border-radius: 0 0 4px 4px;
+        box-sizing: border-box;
+    }
+    .news-container {
+        padding: 8px 8px 0px 8px;
+    }
+    .news-a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .news-time {
+    }
+    .news-span {
+        font-size: 10px;
+        margin: 0 0 10px;
+    }
+    .news-p {
+        font-size: 14px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .hotnews-item {
         width: 362px;
         height: 98px;
     }
+    .hotnews-list {
+    }
+    .hotnews-item {
+        display: flex;
+        padding: 5px;
+    }
+    .hotnews-index {
+        width: 70px;
+        height: 64px;
+        color: #7aa228;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 10px;
+        text-align: center;
+    }
+    .hotnews-content {
+        width: 362px;
+        height: 100px;
+    }
+    .hotnews-meta {
+        display: flex;
+        margin: 0 0 10px;
+    }
+    .hotnews-date {
+        font-size: 14px;
+        background-color: #fc7616;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .hotnews-view {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .hotnews-lable {
+        font-size: 15px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
     .notification {
+    }
+    .notification-item {
+        width: 362px;
+        height: 98px;
+    }
+    .notification-list {
+    }
+    .notification-item {
+        display: flex;
+        padding: 5px;
+    }
+    .notification-index {
+        width: 70px;
+        height: 64px;
+        color: #7aa228;
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0 10px;
+        text-align: center;
+    }
+    .notification-content {
+        width: 362px;
+        height: 100px;
+    }
+    .notification-meta {
+        display: flex;
+        margin: 0 0 10px;
+    }
+    .notification-date {
+        font-size: 14px;
+        background-color: #fc7616;
+        color: white;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .notification-view {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+    .notification-lable {
+        font-size: 15px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 </style>
